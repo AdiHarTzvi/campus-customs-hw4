@@ -1,0 +1,39 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / build output
+node_modules/
+dist/
+
+# OS and local tool files
+.DS_Store
+.claude/
+*.log
+
+# Secrets and credentials: never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials*
+*credentials*.json
+*secret*
+test_accounts*
+*.credentials
+
+# SQLite temp files written while the database is open
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# Assignment data: the instructions say not to commit the database or product images.
+# Keep local copies in place; the app reads them from here.
+data/
+data/campus_customs.db
+data/products/

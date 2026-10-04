@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Customs · App check (HW4 Problem 11)</title>
+<style>
+  :root {
+    --navy: #0b1f3a;
+    --gold: #e4b65a;
+    --sky: #e5f0fa;
+    --sand: #fdf9f0;
+    --ink: #18222f;
+    --muted: #5a6778;
+    --line: #e7e1d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--sand);
+    line-height: 1.6;
+  }
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 2.2rem 1.5rem 2rem;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .wrap, main { max-width: 1100px; margin: 0 auto; }
+  h1, h2 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; line-height: 1.2; }
+  h1 { margin: 0 0 0.4rem; font-size: 2rem; }
+  header p { margin: 0; color: #cbe2f5; max-width: 52rem; }
+  main { padding: 1.5rem; }
+  .check {
+    margin: 1.6rem 0 2.4rem;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(11, 31, 58, 0.08);
+  }
+  .check-head { padding: 1.3rem 1.5rem 0.4rem; }
+  .label {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    background: var(--sky);
+    color: var(--navy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  h2 { margin: 0.6rem 0 0.2rem; font-size: 1.5rem; color: var(--navy); }
+  .caption { margin: 0.4rem 0 1rem; font-size: 1.02rem; max-width: 60rem; }
+  figure { margin: 0; padding: 0 1.5rem 1.5rem; }
+  figure a { display: block; }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  figcaption { margin-top: 0.5rem; font-size: 0.82rem; color: var(--muted); }
+  footer { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 2.5rem; font-size: 0.85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Campus Customs · App check</h1>
+    <p>Three checks of the running HW4 site (React frontend, FastAPI backend, PydanticAI agent, and <code>data/campus_customs.db</code>), captured on October 4, 2026 in a clean guest browser session at 1440px wide.</p>
+  </div>
+</header>
+
+<main>
+  <section class="check" id="check-1">
+    <div class="check-head">
+      <span class="label">Check 1</span>
+      <h2>Inventory check through chat</h2>
+      <p class="caption">On the Davenport College Crewneck page, the shopper asks “How much is this, and how many are left in medium?” and the assistant replies with the exact price ($58) and stock (5 left in medium). The page itself independently shows the same facts ($58.00 and “M · 5 left” in the size grid, with S sold out), matching the database row (price 58.0, M = 5, S = 0).</p>
+    </div>
+    <figure>
+      <a href="app_check_images/inventory.png"><img src="app_check_images/inventory.png" alt="Chat on the Davenport College Crewneck product page answering that it costs $58 and has 5 left in medium, beside the page's size grid showing M with 5 left"></a>
+      <figcaption>Screenshot: <code>app_check_images/inventory.png</code> (click to open full size)</figcaption>
+    </figure>
+  </section>
+
+  <section class="check" id="check-2">
+    <div class="check-head">
+      <span class="label">Check 2</span>
+      <h2>Dynamic search-result cards</h2>
+      <p class="caption">After the shopper asks “What hoodies do you have?”, a “Results for ‘What hoodies do you have?’” panel appears on the Home page with real hoodie cards (image, name, price, short description, and per-size availability), and the assistant replies that there are 27 hoodies. The panel’s “Showing 10 of 27 matches” and the card prices ($68, $88, $88) match the database.</p>
+    </div>
+    <figure>
+      <a href="app_check_images/search_cards.png"><img src="app_check_images/search_cards.png" alt="Home page showing a results panel of hoodie product cards added by the chat, next to the open chat with the question and the assistant's reply"></a>
+      <figcaption>Screenshot: <code>app_check_images/search_cards.png</code> (click to open full size)</figcaption>
+    </figure>
+  </section>
+
+  <section class="check" id="check-3">
+    <div class="check-head">
+      <span class="label">Check 3</span>
+      <h2>Usability improvement: “Shop by your size”</h2>
+      <p class="caption">With “Your size: XL” selected on the Products page, the catalogue shows only the 77 products in stock in XL (the database count), with a “Size XL ×” filter chip. Each card highlights XL in its size row and states availability, such as “Only 2 left in XL” for the Basic Hoodie Big Yale (XL = 2 in the database).</p>
+    </div>
+    <figure>
+      <a href="app_check_images/size_filter.png"><img src="app_check_images/size_filter.png" alt="Products page with the XL size chip selected, showing 77 products in stock in XL and cards marked In stock in XL or Only 2 left in XL"></a>
+      <figcaption>Screenshot: <code>app_check_images/size_filter.png</code> (click to open full size)</figcaption>
+    </figure>
+  </section>
+</main>
+
+<footer>
+  Screenshots were taken from the live site at <code>http://localhost:5173</code> with headless Google Chrome (real clicks and typing; no mocked data). This report uses only relative image paths and inline styles, so it opens directly from disk.
+</footer>
+</body>
+</html>

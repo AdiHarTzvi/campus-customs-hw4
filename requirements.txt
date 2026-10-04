@@ -1,0 +1,6 @@
+# Backend dependencies (tested with the versions noted).
+fastapi>=0.115              # tested 0.142
+uvicorn[standard]>=0.30     # tested 0.54
+pydantic>=2.7,<3            # tested 2.13
+pydantic-ai-slim[openai]>=2.50,<3   # tested 2.54 (instructions, UsageLimits.tool_calls_limit)
+python-dotenv>=1.0.1        # tested 1.2

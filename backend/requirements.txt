@@ -1,0 +1,2 @@
+# Same dependencies as the project root; kept so `pip install -r backend/requirements.txt` also works.
+-r ../requirements.txt
