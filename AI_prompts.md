@@ -558,3 +558,21 @@ After pushing, verify the public GitHub repository in the browser:
 
 Then give me the final public GitHub repository URL that I should submit on Canvas.
 Also log this prompt exactly under `Problem 13: Push to GitHub and submit the URL` in `AI_prompts.md`.
+
+Prompt 2:
+https://github.com/AdiHarTzvi/campus-customs-hw4
+
+Follow-up note:
+The first attempt prepared the commit but needed the URL of the empty public repository I created on GitHub before it could push.
+
+Prompt 3:
+can you repeat the gitpush command? I messed up the password
+
+Follow-up note:
+The first push failed because GitHub rejected the password; it needed a personal access token, so the push had to be run again.
+
+Prompt 4:
+push
+
+Follow-up note:
+The push had been re-run and was waiting for me to sign in; this confirmed I had completed it so the public repository could be verified.
